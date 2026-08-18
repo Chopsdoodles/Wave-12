@@ -22,10 +22,12 @@
 //   isStudent   → true or false
 //
 // Log all four to the console.
-const fullName = "Miguel Coronado";
-let age = 37;
-const city = "Josephine";
-const isStudent = true;
+
+const fullName = "Miguel "; //Name wont change under const keyword.
+const age = 37; // Age will change so let is the keyword.
+let city = "Josephine"; // The same reason as for age can change as well as location.
+let isStudent = true;  // The state of student can also change.
+
 console.log(fullName, age, city, isStudent);
 // ----------------------------------------------------------
 // TASK 2 — Update what can change
@@ -37,12 +39,12 @@ console.log(fullName, age, city, isStudent);
 // Then try to reassign fullName.
 // Read the error, then comment that line out.
 
-// city = "Dallas";
-// isStudent = false;
-// console.log(city, isStudent); //Type error : Assignmment to constant variable.//
+city = "Dallas";
+isStudent = false;
+console.log(city, isStudent); 
 
-// fullName = "John Doe"
-// console.log(fullName); //app.js:44 Uncaught TypeError: Assignment to constant variable.
+fullName = "John Doe"
+console.log(fullName); 
 
 // ----------------------------------------------------------
 // TASK 3 — Undefined in the wild
@@ -52,6 +54,7 @@ console.log(fullName, age, city, isStudent);
 //
 // Now assign it a movie title.
 // Log it again.
+
 let favoriteMovie ;
 console.log(favoriteMovie); //undefined
 
@@ -95,11 +98,11 @@ console.log(productName + " by " + productBrand + " - $" + productPrice);
 // Why did this fail but inStock worked?
 // Write your answer as a comment.
 
-// // inStock = false;
+inStock = false;
 
-// console.log("In stock: " + inStock); 
+console.log("In stock: " + inStock); 
 
-// productName = "Chippies";
+productName = "Chippies";
 
 // It failed because inStock has a const variable.
 // ----------------------------------------------------------
@@ -114,9 +117,11 @@ console.log(productName + " by " + productBrand + " - $" + productPrice);
 //   GaMeLeVeL     → fix the casing
 
 const player2 = 2;
-const myScore = 0;
-const playerName = "John";
-gameLevel = 1;
+let myScore = 50;
+let playerName = "John";
+let gameLevel = 1;
+
+console.log( player2, myScore, playerName, gameLevel);
 // ----------------------------------------------------------
 // TASK 7 — Two-step declaration
 // ----------------------------------------------------------
@@ -153,7 +158,7 @@ console.log(highScore);
 
  const appName = "TaskMaster";
  let version = 3;
- const authorName = "Miguel Coronado";
+ const authorName = "Miguel ";
 console.log( appName +" v" + version + " - built by " + authorName);
 // ----------------------------------------------------------
 // ⭐ STRETCH GOAL
