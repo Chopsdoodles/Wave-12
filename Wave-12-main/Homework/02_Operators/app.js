@@ -23,6 +23,14 @@
 //
 // Log: gameName + " — Player: " + playerName
 
+const gameName = "Space Blaster"; //Const keyword because I dont believe a game would change it's name.
+let playerName = "Miguel"; // let keyword because a players name can change depending on the user.
+let playerScore = 0; // let keyword because score can always change.
+let highScore = 850; // let keyword because highscore can update.
+let pointsperkill = 25; // let keyword because the kill count can change.
+let livesRemaining = 3; // let keyword because remaining lives can drop.
+
+console.log( gameName + " - Player: " + playerName);
 // ----------------------------------------------------------
 // TASK 2 — Earn points
 // ----------------------------------------------------------
@@ -32,6 +40,12 @@
 //
 // Log: "Earned: " + totalEarned + " points"
 // Log: "Score: " + playerScore
+let totalEarned = 6;
+totalEarned *= pointsperkill;
+playerScore += totalEarned;
+
+console.log("Earned: " + totalEarned + " points");
+console.log("Score: " + playerScore);
 
 // ----------------------------------------------------------
 // TASK 3 — Take damage
@@ -43,6 +57,13 @@
 // Then log the result of: livesRemaining > 0
 // Write a comment: what does true/false mean in this context?
 
+livesRemaining -= 1;
+livesRemaining -= 1;
+console.log("Lives remaining: " + livesRemaining);
+console.log( livesRemaining > 0)
+
+// livesRemaining starts at 3 and we subtracted 1 for each hit for a total of 2.
+// Resulting in livesRemaining to 1 which is greater than 0 and is why we get a true response.
 // ----------------------------------------------------------
 // TASK 4 — Level bonus
 // ----------------------------------------------------------
@@ -52,6 +73,11 @@
 //
 // Log: "Bonus: " + levelBonus
 // Log: "Score after bonus: " + playerScore
+
+const levelBonus = playerScore * 0.5;
+playerScore += levelBonus;
+console.log("Bonus:" + levelBonus)
+console.log("Score after bonus:" + playerScore);
 
 // ----------------------------------------------------------
 // TASK 5 — Check the high score
@@ -63,6 +89,10 @@
 //   playerScore === highScore     → prediction:
 //   playerScore >= highScore      → prediction:
 
+console.log( playerScore > highScore); //false
+console.log( playerScore === highScore); //false
+console.log( playerScore >= highScore); //false
+
 // ----------------------------------------------------------
 // TASK 6 — Update the high score
 // ----------------------------------------------------------
@@ -73,7 +103,9 @@
 // Log: playerScore > highScore   (is it true or false right now?)
 // Then reassign highScore to playerScore.
 // Log: "New high score: " + highScore
+console.log(playerScore > highScore); //false
 
+console.log("New high score: "+ highScore);
 // ----------------------------------------------------------
 // TASK 7 — Time remaining (modulus practice)
 // ----------------------------------------------------------
@@ -84,6 +116,10 @@
 //
 // Log: "Time left: " + minutes + " min " + secondsLeft + " sec"
 // ⚠️ minutes will be a decimal — that's expected. We'll fix it in Data Types.
+const totalSeconds = 245;
+const minutes = (totalSeconds / 60);
+secondsLeft = (totalSeconds % 60);
+console.log("Time left: " + minutes + " min " + secondsLeft + " sec");
 
 // ----------------------------------------------------------
 // TASK 8 — Connect the dots summary
@@ -96,7 +132,11 @@
 //
 // Then log whether the player beat the original highScore (850):
 // endScore > 850
-
+const startScore = 0;
+const endScore = playerScore;
+const improvement = endScore - startScore ;
+console.log(playerName + " improved by " + improvement + " points this session.")
+console.log( endScore >850);
 // ----------------------------------------------------------
 // ⭐ STRETCH GOAL — Accuracy Rating
 // ----------------------------------------------------------
@@ -116,3 +156,14 @@
 // Bonus question (write as a comment):
 // accuracyPercent will have many decimal places. What do you think
 // we could use to round it to 2 decimal places? (Hint: coming in Data Types)
+const shotsFired = 40;
+const shotsHit = 31;
+const accuracyDecimal = shotsHit / shotsFired ;
+const accuracyPercent = accuracyDecimal * 100;
+
+console.log(playerName + " accuracy: " + accuracyPercent + "%");
+console.log( accuracyPercent >= 75);
+
+var username1 = "gamer99";
+var username2 = "Gamer99";
+console.log("Names match: " + (username1 == username2));

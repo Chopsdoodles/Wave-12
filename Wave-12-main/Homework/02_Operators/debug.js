@@ -17,8 +17,12 @@ const tipAmount  = billAmount % tipPercent;
 console.log("Tip: $" + tipAmount);
 
 // What's wrong ↓
-
+// % is for modulo  and not multiplication and tipPercent should be 0.15 not 15
 // Your fix ↓
+const billAmount = 80;
+const tipPercent = 0.15;
+const tipAmount  = billAmount * tipPercent;
+console.log("Tip: $" + tipAmount);
 
 
 // ----------------------------------------------------------
@@ -34,9 +38,9 @@ countdown -= 1;
 console.log("Countdown: " + countdown);
 
 // What's wrong ↓
-
+const countdown = 10; //  can't be reassigned.
 // Your fix ↓
-
+let countdown = 10; // can be reassinged.
 
 // ----------------------------------------------------------
 // 🔴 DEBUG 3 — Hard
@@ -51,9 +55,17 @@ var username2 = "Gamer99";
 console.log("Names match: " + (username1 == username2));
 
 // Logic bug ↓
+// There is no reproducible logic bug. The usernames have different capitalizations , so they don't match. The code correctly returns *false* so
+// I could not reproduce the claimed bug.
 
 // Style issue 1 ↓
+// Var is being used over const , values aren't being reassigned so const is appropriate.
 
 // Style issue 2 ↓
+// The variable username1 and username2 could be written as camel case for clarity and readability.
 
 // Your fix ↓
+
+const firstUsername = "gamer99";
+const secondUsername = "Gamer99";
+console.log("Names match: " + (firstUsername == secondusername));
